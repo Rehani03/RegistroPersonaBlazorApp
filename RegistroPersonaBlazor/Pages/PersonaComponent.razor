@@ -1,0 +1,69 @@
+﻿@page "/Personas"
+@using RegistroPersonaBlazor.BLL
+@using RegistroPersonaBlazor.Entidades
+
+<h3>Registro de Personas</h3>
+
+<EditForm Model="personas" OnInvalidSubmit="Guardar">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+
+    <label for="Id">ID:</label>
+    <div class="input-group">
+        <InputNumber @bind-Value="personas.personaId" class="form-control"></InputNumber>
+        <div class="input-group-append">
+            <button type="button" class="btn btn-outline-primary" @onclick="Buscar">Buscar</button>
+        </div>
+    </div>
+
+    <p class="nombre">
+        NOMBRE: <InputText @bind-Value="personas.nombre" class="form-control"></InputText>
+    </p>
+
+    <p class="telefono">
+        TELEFONO: <InputText @bind-Value="personas.telefono" class="form-control"></InputText>
+    </p>
+
+    <p class="cedula">
+        CEDULA: <InputText @bind-Value="personas.cedula" class="form-control"></InputText>
+    </p>
+
+    <p class="direccion">
+        DIRECCION: <InputText @bind-Value="personas.direccion" class="form-control"></InputText>
+    </p>
+
+    <p class="fecha">
+        FECHA: <InputDate @bind-Value="personas.fecha" class="form-control"></InputDate>
+    </p>
+
+    <div class="form-group">
+        <button type="button" class="btn btn-outline-secondary" @onclick="Nuevo">NUEVO</button>
+        <button type="button" class="btn btn-outline-success" @onclick="Guardar">Guardar</button>
+        <button type="button" class="btn btn-outline-danger" @onclick="Eliminar">NUEVO</button>
+    </div>
+
+</EditForm>
+
+@code {
+    Personas personas = new Personas();
+
+    private void Nuevo()
+    {
+        this.personas = new Personas();
+    }
+
+    private void Guardar()
+    {
+
+    }
+
+    private void Buscar()
+    {
+
+    }
+
+    private void Eliminar()
+    {
+
+    }
+}
